@@ -1,0 +1,290 @@
+#root {
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+body{
+  background: #f9f9f9;
+}
+
+:root {
+  --bg-color: #f1f1f1; /* Світла тема */
+  --text-color: #1a1a1a;
+  --buttons: #fff;
+  --historyList: #d0d2ff;
+  --buttonRivno: #d0d2ff;
+}
+
+.dark-mode {
+  --bg-color: #1a1a1a; /* Темна тема */
+  --text-color: #f1f1f1;
+  --buttons: #323131;
+  --historyList: #323131;
+  --buttonRivno: #535bf2;
+
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+
+
+
+.CalculatorApp{
+  padding: 30px 0;
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+.titleMain{
+  color: var(--text-color);
+  margin: 0 0 0 30px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+.Calculator{
+  max-height: 550px;
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  width: 100%;
+  background: var(--bg-color);
+  border-radius: 16px;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.CalculatorBody{
+  width: 430px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  border-radius: 16px;
+}
+.calculatorDisplay{
+  display: flex;
+  position: relative;
+  justify-content: end;
+  align-items: center;
+  padding: 0 20px;
+  text-align: end;
+  height: 100px;
+  background: var(--buttons);
+  border-radius: 8px;
+  font-size: 32px;
+  color: var(--text-color);
+}
+.lastOperation{
+  position: absolute;
+  left: 20px;
+  top: 0px;
+  font-size: 14px;
+}
+
+.ButtonPanel{
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.button{
+  width: 100px;
+  height: 50px;
+  background: var(--buttons);
+  color: var(--text-color);
+}
+
+
+.button:last-of-type{
+  width: 210px;
+  background: var(--buttonRivno);
+}
+
+
+button{
+  background: #d0d2ff;
+  color: #1a1a1a;
+}
+
+.HistoryPanel{
+  width: 430px;
+  height: 550px;
+}
+
+.HistoryList {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: start;
+  align-items: center;
+  list-style: none;
+  text-align: end;
+  height: 510px;
+  margin: 20px;
+  padding: 0;
+  gap: 10px;
+  overflow-y: auto;
+
+}
+
+.HistoryElement{
+  font-size: 24px;
+  padding: 20px 0;
+  background: var(--historyList);
+  border-radius: 8px;
+  width: 100%;
+  color: var(--text-color);
+}
+.HistoryElement > p{
+  margin: 0 20px;
+}
+
+.copyMessage{
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  bottom: 20px;
+  width: 100px;
+  height: 30px;
+  left: calc(50% - 20px);
+  background: #27bf22;
+  border-radius: 15px;
+  color: #f9f9f9;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+.titleSection{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 30px;
+  height: 70px;
+}
+
+
+.titleSwitcher{
+  font-size: 24px;
+  text-align: end;
+  color: var(--text-color);
+  margin-right: 30px;
+}
+
+.CalculatorApp.dark .Calculator{
+  background: #1a1a1a;
+  color: #f9f9f9;
+  box-shadow: 0 8px 16px 0 rgba(255, 255, 255, 0.2);
+}
+
+.CalculatorApp.dark .copyMessage{
+  background: #535bf2;
+}
+
+.clearHistoryBtn{
+  display: flex;
+ margin-left: auto;
+  margin-right: 30px;
+  background: #535BF2FF;
+  color: #f1f1f1;
+  transition: .3s;
+
+}
+.clearHistoryBtn:hover {
+  cursor: pointer;
+  background: #454dea;
+  transform: scale(1.05);
+}
+
+.theme-switcher {
+  position: relative;
+  display: flex;
+  width: 60px;
+  height: 30px;
+  margin: 0px 30px 30px auto ;
+
+}
+
+.theme-switcher input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 50px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 22px;
+  width: 22px;
+  border-radius: 50%;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: 0.4s;
+}
+
+/* Коли тумблер переміщено */
+input:checked + .slider {
+  background-color: #007bff;
+}
+
+input:checked + .slider:before {
+  transform: translateX(30px);
+}
+
+/* Стилі для світлої та темної теми */
+.Calculator.light .slider {
+  background-color: #ccc;
+}
+
+.Calculator.dark .slider {
+  background-color: #555555;
+}
+
